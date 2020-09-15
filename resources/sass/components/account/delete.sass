@@ -1,0 +1,54 @@
+.delete-profile
+    h1
+        margin-bottom: var(--m-x-lg)
+        font-size: var(--fs-xx-lg)
+    &__warning
+        display: block
+        font-size: var(--fs-medium)
+        line-height: 1.75rem
+        padding: var(--p-x-lg)
+        position: relative
+        color: #212121
+        background-color: rgba(234, 82, 0, 0.15)
+        border-radius: 5px
+        margin-bottom: var(--m-x-lg)
+    &__name-label
+        
+        text-transform: uppercase
+        font-size: var(--fs-small)
+        font-weight: 700
+    &__name
+        margin: var(--m-s) 0
+        font-size: var(--fs-medium)
+        line-height: 1.33rem              
+    form
+        margin-top: 17px
+    &__password-input
+        display: block
+        margin-top: var(--m-s)
+        height: 3.2rem
+        width: 44%
+        padding: var(--p-m) var(--p-lg) var(--p-s)
+        font-size: var(--fs-lg)
+        color: #555555
+        background-color: #fff
+        border: 1px solid #ccc
+        border-radius: 3px
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075)
+        transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s
+        &:focus
+            outline: 0
+            border-color: #66afe9
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6)
+    &__password-label
+        margin: 0
+        text-transform: uppercase
+        font-size: var(--fs-small)
+        font-weight: 700
+    &__checkbox
+        margin: var(--m-x-lg) 0
+        font-size: var(--fs-medium)
+        input
+            margin-right: var(--m-lg)
+    &__checkbox-label
+        line-height: 1.5rem

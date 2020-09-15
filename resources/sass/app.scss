@@ -1,0 +1,56 @@
+// Variables
+@import "variables";
+
+//normalize
+@import "../css/normalize.css";
+
+//fonts
+@import "fonts";
+
+//static pages
+@import "components/static-pages.sass";
+@import "components/static/nav.sass";
+@import "components/static/main.sass";
+@import "components/static/footer.sass";
+@import "components/static/logo.sass";
+
+//buttons
+@import "components/buttons/main-button.sass";
+@import "components/buttons/nav-burger.sass";
+
+//forms
+@import "components/forms/add-note.sass";
+@import "components/forms/add-todo.sass";
+@import "components/forms/change-password.sass";
+@import "components/forms/input.sass";
+@import "components/forms/login.sass";
+@import "components/forms/register.sass";
+
+//account
+@import "components/account/account.sass";
+@import "components/account/sidebar.sass";
+@import "components/account/profile.sass";
+@import "components/account/upload-photo.sass";
+@import "components/account/delete.sass";
+@import "components/account/login-register.sass";
+
+//todos
+@import "components/todos/todo-app.sass";
+@import "components/todos/navigation-by-category.sass";
+@import "components/todos/todo-list.sass";
+@import "components/todos/todo.sass";
+@import "components/todos/completed-incomplete-links.sass";
+@import "components/todos/toolbar.sass";
+@import "components/forms/datepicker.sass";
+@import "components/todos/additional-info.sass";
+@import "components/todos/task-details.sass";
+@import "components/todos/top-bar.sass";
+
+@import "body-html.sass";
+
+//swiper slide
+@import "../css/swiper.min.css";
+@import "slider";
+
+//media
+@import "./media.sass";

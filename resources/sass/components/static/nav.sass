@@ -1,0 +1,129 @@
+.nav
+    width: 100%
+    min-height: var(--static-nav-height)
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05)
+    font-weight: 700
+    background-color: #0060bf
+    &__wrapper
+        display: flex
+        justify-content: space-between
+        flex-wrap: nowrap
+        min-height: var(--static-nav-height)
+        align-items: center
+    &__logo
+        margin-bottom: .5%
+        flex-shrink: 0        
+    &__ul
+        // height: 33px
+        padding: 0  var(--p-x-lg) 0 0
+        margin: 0
+        display: flex
+        flex-shrink: 1
+        flex-grow: 1
+        justify-content: space-around
+        font-size: var(--fs-medium)
+        li
+            display: block
+            list-style: none
+            a 
+                padding: var(--p-x-s) var(--p-x-s)
+                opacity: .8
+                color: #fff
+                line-height: 2.75rem
+                text-decoration: none
+                white-space: nowrap
+                transition: opacity .1s
+                &:hover
+                    opacity: 1
+            .nav__signup-btn
+                padding: 0 var(--p-lg)
+                line-height: 2.4rem
+    &__signup-btn
+        border: 2px solid rgb(255, 255, 255)
+        border-radius: 5px
+        height: 2.83rem
+        display: block
+
+
+.account-dropdown
+    position: relative
+    height: 32px
+    &__btn
+        box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125)
+        outline: 0
+        cursor: pointer
+        padding: 0
+        border-radius: 10%
+        border: none
+        height: 32px
+        img
+            border-radius: 10%
+            height: 32px
+            width: 32px
+.dropdown-menu
+    display: none
+    position: absolute
+    top: 100%
+    z-index: 10
+    padding: var(--p-s) 0
+    margin: 2px 0 0
+    font-size: var(--fs-medium)
+    text-align: left
+    list-style: none
+    background-color: #fff
+    border: 1px solid rgba(0, 0, 0, 0.15)
+    border-radius: 3px
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175)
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175)
+    margin-top: 8px
+    margin-right: -9px
+    right: 0.5rem
+    left: auto
+    &_opened
+        display: block
+    &::before
+        position: absolute
+        display: inline-block
+        content: ''
+        top: -9px
+        right: 16px
+        border-right: 8px solid transparent
+        border-bottom: 9px solid #fff
+        border-left: 8px solid transparent
+    &__details
+        display: flex
+        padding: var(--p-lg)
+        font-size: var(--fs-medium)
+        line-height: 1.67rem
+        border-bottom: 1px solid #D0D3D6
+        white-space: nowrap
+        .avatar
+            height: 40px
+            width: 40px
+            border-radius: 10%
+        .name
+            font-weight: 700
+            margin-left: var(--m-m)
+        .email
+            margin-left: var(--m-m)
+            font-weight: 400
+    &__links-wrapper
+        padding-top: var(--p-s)
+    &__link,&__btn
+        background-color: #ffffff
+        border: 0
+        border-radius: 0
+        color: #333333
+        font-weight: 400
+        display: block
+        width: 100%
+        padding: var(--p-x-s) var(--p-lg)
+        font-size: var(--fs-medium)
+        text-align: left
+        text-decoration: none
+        transition: background-color .07s
+        &:hover
+            background-color: #d1e3f5
+
+    
+    

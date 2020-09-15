@@ -1,0 +1,52 @@
+
+@keyframes filling
+    0%
+        max-width: calc( 100% - var(--category-nav-width) )
+        margin-left: var(--category-nav-width)
+    100%
+        max-width: 100%
+        margin-left: 0
+@keyframes compression
+    0%
+        max-width: 100%
+        margin-left: 0
+    100%
+        max-width: calc( 100% - var(--category-nav-width) )
+        margin-left: var(--category-nav-width)    
+    
+    
+.todo-app
+    margin-top: 0
+    background-color: #D7E7F5
+    height: calc( 100vh - 3.33rem )
+    display: flex
+    .todo-main
+        display: flex            
+        position: relative
+        z-index: 1
+        overflow: hidden
+        padding-top: var(--p-lg)
+        padding-right: var(--p-lg)
+        padding-left: var(--p-lg)
+        flex: 1 1 80%
+        &__container
+            background-color: white
+            padding-top: var(--p-x-lg)
+            border-radius: 5px 5px 0 0
+            width: 50% 
+            display: flex
+            flex-direction: column             
+        &_state_with-nav
+            animation: .5s linear 1 normal compression
+            margin-left: var(--category-nav-width)
+            max-width: calc( 100% - var(--category-nav-width) )
+        &_state_without-nav
+            animation: .5s linear 1 normal filling
+            max-width: 100%
+            margin-left: 0
+        .empty-block
+            height: 4.42rem
+            border-bottom: 1px dotted rgb(229, 229, 229)
+            border-top: 1px dotted rgb(229, 229, 229)
+ 
+

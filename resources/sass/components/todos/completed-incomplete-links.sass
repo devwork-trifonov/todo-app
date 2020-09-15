@@ -1,0 +1,49 @@
+.status-links
+    display: flex
+    justify-content: flex-end
+    flex: 0 0 3%
+    align-items: flex-end
+    div
+        display: inline-block
+        border-bottom: 1px dotted rgb(229, 229, 229)
+        width: 100%
+        flex: 1 2 40%
+    &__link
+        display: inline-block
+        cursor: pointer
+        font-size: var(--fs-small)
+        font-weight: 600
+        color: #0060bf
+        text-decoration: none
+        padding: 0 var(--p-lg)
+        height: 2.33rem
+        flex: 0 0 10%
+        line-height: 2.3rem
+        border-bottom: 1px dotted rgb(229, 229, 229)
+        border-radius: 3px
+        position: relative
+        text-align: center
+        &:last-child
+            margin-right: 2.5rem
+            border-bottom-right-radius: 0
+            &::after
+                content: ''
+                display: inline-block
+                width: 2.4rem
+                border-bottom: 1px dotted rgb(229, 229, 229)
+                top: 100%
+                right: -2.5rem
+                position: absolute
+        &:hover
+            color: #0060bf
+            text-decoration: none
+        &_active
+            border-left: 1px dotted rgb(229, 229, 229)
+            border-right: 1px dotted rgb(229, 229, 229)
+            border-top: 1px dotted rgb(229, 229, 229)
+            border-radius: 3px
+            border-bottom: 0
+            color: black
+            &:hover
+                color: black
+                text-decoration: none

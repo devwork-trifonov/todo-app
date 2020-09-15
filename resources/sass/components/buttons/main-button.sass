@@ -1,0 +1,54 @@
+.btn
+    padding: 0 var(--p-lg)
+    background-color: #2e8ceb
+    color: #ffffff
+    border: 0
+    border-radius: 3px
+    font-size: var(--fs-medium)
+    font-weight: 600
+    outline: none
+    height: 2.66rem
+    transition: all .1s
+    &:hover
+        box-shadow: inset 0 -2px 0 rgba(0,0,0,0.3)
+        color: #ffffff
+    &_uppercase
+        text-transform: uppercase
+    &_style_blond
+        border: 1px solid #c7cacd
+        background-color: #fbfbfa
+        color: black
+        &:hover
+            color: #2e8ceb
+            box-shadow: unset
+    &_style_enticing
+        white-space: nowrap
+        vertical-align: middle
+        touch-action: manipulation
+        border: 1px solid #d24b03
+        border-radius: 4px
+        background-color: #d24b03
+        font-size: var(--fs-x-lg)
+        padding: var(--p-lg) calc( var(--p-lg) * 3 )
+        line-height: 2.17rem
+        height: 4.5rem
+        display: block
+        text-decoration: none
+        &:hover
+            background-color: #ca492e
+            box-shadow: none
+    &_style_dangerous
+        background-color: #d24b03
+        padding: var(--p-lg) var(--p-x-lg)
+        height: 3.5rem
+        &:hover
+            box-shadow: none
+            background-color: #ca492e
+    &_purpose_account-actions
+        font-size: var(--fs-lg)
+        padding: var(--p-lg) var(--p-x-lg)
+        background-color: #009dff
+        height: 3.5rem
+        &:hover
+            background-color: #007ecc
+            box-shadow: none

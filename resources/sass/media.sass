@@ -1,0 +1,57 @@
+@media ( min-width: 992px )
+    .login-register
+        &__left-wrapper
+            margin-left: 25%
+
+@media ( min-width: 768px ) and ( max-width: 991px )
+    .login-register
+        &__left-wrapper
+            margin-left: 8.5%
+    :root
+        --nav-logo-width: 130px
+        --fs-base: 10px
+        --category-nav-width: 150px
+    
+@media ( max-width: 767px )
+    .login-register__left
+        display: none
+    .login-register__right
+        .top-bar__logo
+            visibility: visible
+    .todo-main
+        .todo-main__container
+            width: 100%
+    .additional-info
+        display: none
+    .task-details
+        width: 99%
+    .nav__ul
+        flex-wrap: wrap
+    
+    :root
+        --nav-logo-width: 130px  
+        --fs-base: 10px
+        --category-nav-width: 120px
+@media ( max-width: 556px )
+    .account
+        &__wrapper
+            flex-direction: column
+        &__right-block
+            margin-top: var(--m-x-lg)
+            padding: 0
+    .nav__ul
+        justify-content: flex-start
+    .login-register__right
+        flex-basis: 70%
+    .swiper-container
+        visibility: hidden
+    // .static-footer__wrapper
+    //     flex-direction: column
+    :root
+        --nav-logo-width: 115px 
+
+@media ( max-width: 370px )
+    .nav__ul
+        display: none
+    
+    
