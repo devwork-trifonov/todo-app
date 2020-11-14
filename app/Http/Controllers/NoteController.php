@@ -25,18 +25,17 @@ class NoteController extends Controller
     {
         $user = User::find(Auth::id());
         $note = new Note;
-        $note->body = $request->body;
-        $note->todo_id = $request->todo_id;
+        $note->body = $request->note['body'];
+        $note->todo_id = $request->note['todo_id'];
         $note->save();
-
         return $user->notes->last();
     }
 
     public function setBody(Request $request)
     {
         $user = User::find(Auth::id());
-        $note = Note::find($request->id);
-        $note->body = $request->body;
+        $note = Note::find($request->noteData['id']);
+        $note->body = $request->noteData['body'];
         $note->save();
         return $user->notes;
     }
@@ -44,8 +43,7 @@ class NoteController extends Controller
     public function delete(Request $request)
     {
         $user = User::find(Auth::id());
-        $note = Note::find($request->id);
-        // $note->body = $request->body;
+        $note = Note::find($request->noteData['id']);
         $note->delete();
         return $user->notes;
     }

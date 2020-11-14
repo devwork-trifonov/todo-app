@@ -8,8 +8,6 @@ import { AddNote } from "../forms/AddNote"
 import { TodoEdit } from "./TodoEdit"
 import { TodoElement, CompletedTodoElement } from "./TodoElement"
 
-const CSRF_TOKEN = document.querySelector('meta[name="csrf-token"]').content
-
 export default function TodoApp({
   todos,
   todayTodos,
@@ -123,10 +121,7 @@ export default function TodoApp({
               </Link>
             </div>
 
-            <button
-              onClick={() => logout(CSRF_TOKEN)}
-              className="dropdown-menu__btn"
-            >
+            <button onClick={() => logout()} className="dropdown-menu__btn">
               Выйти
             </button>
           </div>
@@ -314,10 +309,7 @@ function Todos({
     if (todoDetails.earlyTodo.body === todoDetails.todo.body) {
       return
     } else {
-      setBody(
-        { id: todoDetails.todo.id, body: todoDetails.todo.body },
-        CSRF_TOKEN
-      )
+      setBody({ id: todoDetails.todo.id, body: todoDetails.todo.body })
     }
   }
 
@@ -346,16 +338,16 @@ function Todos({
   }
 
   function addNoteRequest(body) {
-    addNote({ body, todo_id: todoDetails.todo.id }, CSRF_TOKEN)
+    addNote({ body, todo_id: todoDetails.todo.id })
   }
 
   function completeTodoRequest() {
-    completeTodo({ id: todoDetails.todo.id }, CSRF_TOKEN)
+    completeTodo({ id: todoDetails.todo.id })
     dispatchTodoDetails({ type: RESET_TODO_DETAILS })
   }
 
   function restoreTodoRequest() {
-    restoreTodo({ id: todoDetails.todo.id }, CSRF_TOKEN)
+    restoreTodo({ id: todoDetails.todo.id })
     dispatchTodoDetails({ type: RESET_TODO_DETAILS })
   }
 
@@ -364,7 +356,7 @@ function Todos({
   }
 
   function deleteTodoRequest() {
-    deleteTodo({ id: todoDetails.todo.id }, CSRF_TOKEN)
+    deleteTodo({ id: todoDetails.todo.id })
   }
 
   return (
@@ -440,11 +432,7 @@ function Todos({
           ) : (
             <div className="toolbar"></div>
           )}
-          <AddTodoForm
-            csrfToken={CSRF_TOKEN}
-            addTodo={addTodo}
-            successAddedTodo={successAddedTodo}
-          />
+          <AddTodoForm addTodo={addTodo} successAddedTodo={successAddedTodo} />
           <div className="todo-list">
             {/* {list ? ( */}
             <TodoElement
@@ -537,7 +525,6 @@ function Todos({
                     key={note.id}
                     setNoteBody={setNoteBody}
                     deleteNote={deleteNote}
-                    CSRF_TOKEN={CSRF_TOKEN}
                   />
                 ))
               : null}
