@@ -8,6 +8,7 @@ import {
   resetPasswordMessage,
   logIn,
   register,
+  deleteProfile,
 } from "../actions/user"
 
 window.moment = require("moment")
@@ -22,6 +23,7 @@ function App(props) {
     password,
     logIn,
     register,
+    deleteProfile,
   } = props
   const AuthenticateApp = React.lazy(
     () => import("../components/authenticate/AuthenticateApp")
@@ -42,6 +44,7 @@ function App(props) {
           resetPasswordMessage={props.resetPasswordMessage}
           setPassword={props.setPassword}
           password={password}
+          deleteProfile={deleteProfile}
         />
       </Suspense>
     )
@@ -73,5 +76,6 @@ const mapDispatchToProps = (dispatch) => ({
   resetPasswordMessage: () => dispatch(resetPasswordMessage()),
   logIn: (data) => dispatch(logIn(data)),
   register: (data) => dispatch(register(data)),
+  deleteProfile: (data) => dispatch(deleteProfile(data)),
 })
 export default connect(mapStateToProps, mapDispatchToProps)(App)

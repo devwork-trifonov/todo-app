@@ -37,6 +37,7 @@ Route::post('/notes/delete', 'NoteController@delete');
 
 Route::put('account/update-password', 'ProfileController@updateUserPassword');
 Route::put('account/update-photo', 'UserAvatarController@update');
+Route::post('account/delete', 'ProfileController@delete');
 
 Auth::routes();
 

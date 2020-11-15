@@ -43,4 +43,13 @@ class ProfileController extends Controller
         $user->save();
         return response()->json(['success'=>'Вы успешно сменили пароль']);
     }
+
+    public function delete(Request $request)
+    {
+        $user = User::find(Auth::id());
+
+        if (Hash::check($request->password, $user->password)) {
+            $user->delete();
+        }
+    }
 }

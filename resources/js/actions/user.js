@@ -9,6 +9,16 @@ export const ERROR_USER = "ERROR_USER"
 export const SET_PASSWORD = "SET_PASSWORD"
 export const RESET_PASSWORD_MESSAGE = "RESET_PASSWORD_MESSAGE"
 
+export function deleteProfile(data) {
+  return (dispatch) => {
+    return axios
+      .post("/account/delete", data, { credentials: "same-origin" })
+      .then(() => {
+        dispatch(fetchUser())
+      })
+  }
+}
+
 export function setPassword(data) {
   return (dispatch) => {
     return axios
