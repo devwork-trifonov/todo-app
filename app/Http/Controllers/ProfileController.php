@@ -22,7 +22,9 @@ class ProfileController extends Controller
             'confirmed' => 'Пароли не совпадают'
         ];
 
-        $validator=Validator::make($request->all(), [
+        $requestData = json_decode($request->data, true);
+
+        $validator=Validator::make($requestData, [
             'current' => 'required',
             'new_password' => 'required|confirmed',
             'new_password_confirmation' => 'required'
@@ -34,10 +36,10 @@ class ProfileController extends Controller
 
         $user = User::find(Auth::id());
 
-        if (!Hash::check($request->current, $user->password)) {
+        if (!Hash::check($requestData['current'], $user->password)) {
             return response()->json(['error'=>'Неверный пароль'], 200);
         }
-        $user->password = Hash::make($request->new_password);
+        $user->password = Hash::make($requestData['new_password']);
         $user->save();
         return response()->json(['success'=>'Вы успешно сменили пароль']);
     }
