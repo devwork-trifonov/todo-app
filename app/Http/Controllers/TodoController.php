@@ -38,7 +38,7 @@ class TodoController extends Controller
     {
         $user = User::find(Auth::id());
         $todo = Todo::find($request->todoData['id']);
-        $todo->body = $request->body;
+        $todo->body = $request->todoData['body'];
         $todo->save();
         return $user->todos;
     }
