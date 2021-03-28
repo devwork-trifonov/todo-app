@@ -7,6 +7,14 @@ import { Note } from "../notes/Note"
 import { AddNote } from "../forms/AddNote"
 import { TodoEdit } from "./TodoEdit"
 import { TodoElement, CompletedTodoElement } from "./TodoElement"
+import { DropdownMenu } from "../DropdownMenu/DropdownMenu"
+
+const links = [
+  {
+    to: "/account",
+    children: "Аккаунт",
+  },
+]
 
 export default function TodoApp({
   todos,
@@ -30,9 +38,12 @@ export default function TodoApp({
   logout,
 }) {
   const { list } = useParams()
+  const [navBarState, setNavBarState] = useState()
+  let [isOpened, setIsOpened] = useState(false)
+  let dropdownRef = useRef()
+  let dropdownBtn = useRef()
   let todoList
   let todoListName
-  const [navBarState, setNavBarState] = useState()
 
   useEffect(() => {
     if (window.innerWidth > 992) {
@@ -44,32 +55,39 @@ export default function TodoApp({
     setNavBarState((prev) => !prev)
   }
 
-  useEffect(() => {
-    return () => document.removeEventListener("click", dropdownEventHandler)
-  })
+  function handleOpen() {
+    if (!isOpened) {
+      document.addEventListener("click", handleClickOutside)
+    }
+    setIsOpened((prev) => !prev)
+  }
+
+  function handleClickOutside(event) {
+    if (!dropdownRef.current) {
+      document.removeEventListener("click", handleClickOutside)
+      return
+    }
+    const clickOutside =
+      event.target !== dropdownBtn.current &&
+      !dropdownRef.current.contains(event.target)
+    const clickOnInternalLink =
+      dropdownRef.current.contains(event.target) &&
+      (event.target.tagName === "BUTTON" || event.target.tagName === "A")
+    if (event.target === dropdownBtn.current) {
+      document.removeEventListener("click", handleClickOutside)
+      return
+    }
+    if (clickOutside || clickOnInternalLink) {
+      setIsOpened(false)
+      document.removeEventListener("click", handleClickOutside)
+    }
+  }
 
   function copyArray(arr) {
     return arr.map((item) => {
       return Object.assign({}, item)
     })
   }
-  function toggleClass() {
-    dropdown.current.classList.toggle("dropdown-menu_opened")
-    document.addEventListener("click", dropdownEventHandler)
-  }
-
-  function dropdownEventHandler(e) {
-    if (
-      dropdown.current.classList.contains("dropdown-menu_opened") &&
-      e.target !== dropdownBtn.current &&
-      !dropdown.current.contains(e.target)
-    ) {
-      dropdown.current.classList.remove("dropdown-menu_opened")
-      document.removeEventListener("click", dropdownEventHandler)
-    }
-  }
-  const dropdown = useRef()
-  const dropdownBtn = useRef()
 
   switch (list) {
     case "all":
@@ -100,31 +118,19 @@ export default function TodoApp({
   return (
     <>
       <div className="todo-top-bar" key={0}>
-        <div
-          className="todo-top-bar__settings"
-          ref={dropdownBtn}
-          onClick={toggleClass}
-        >
-          <div className="dropdown-menu" ref={dropdown}>
-            <div className="dropdown-menu__details">
-              <img className="avatar" src={user.avatar} alt="avatar"></img>
-              <div>
-                <div className="name">
-                  {user.first_name} {user.last_name}
-                </div>
-                <div className="email">{user.email}</div>
-              </div>
-            </div>
-            <div className="dropdown-menu__links-wrapper">
-              <Link to="/account" className="dropdown-menu__link">
-                Account
-              </Link>
-            </div>
-
-            <button onClick={() => logout()} className="dropdown-menu__btn">
-              Выйти
-            </button>
-          </div>
+        <div ref={dropdownRef}>
+          <div
+            className="todo-top-bar__settings"
+            ref={dropdownBtn}
+            onClick={handleOpen}
+          ></div>
+          <DropdownMenu
+            user={user}
+            logout={logout}
+            isOpened={isOpened}
+            links={links}
+            margin="2px"
+          />
         </div>
       </div>
       <div className="todo-app" key={1}>

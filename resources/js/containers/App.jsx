@@ -2,12 +2,9 @@ import React, { Suspense } from "react"
 import { connect } from "react-redux"
 
 import {
-  logoutUser,
   updatePhoto,
   setPassword,
   resetPasswordMessage,
-  logIn,
-  register,
   deleteProfile,
 } from "../actions/user"
 
@@ -19,10 +16,7 @@ function App(props) {
     updatePhoto,
     isAuthenticate,
     userData,
-    logoutUser,
     password,
-    logIn,
-    register,
     deleteProfile,
   } = props
   const AuthenticateApp = React.lazy(
@@ -40,7 +34,6 @@ function App(props) {
         <AuthenticateApp
           user={userData}
           updatePhoto={updatePhoto}
-          logout={logoutUser}
           resetPasswordMessage={props.resetPasswordMessage}
           setPassword={props.setPassword}
           password={password}
@@ -51,7 +44,7 @@ function App(props) {
   } else if (!isFetchingUser && !isAuthenticate) {
     return (
       <Suspense fallback={<h2>Loading...</h2>}>
-        <UnAuthenticateApp logIn={logIn} register={register} />
+        <UnAuthenticateApp />
       </Suspense>
     )
   }
@@ -70,12 +63,9 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  logoutUser: () => dispatch(logoutUser()),
   updatePhoto: (blob) => dispatch(updatePhoto(blob)),
   setPassword: (data) => dispatch(setPassword(data)),
   resetPasswordMessage: () => dispatch(resetPasswordMessage()),
-  logIn: (data) => dispatch(logIn(data)),
-  register: (data) => dispatch(register(data)),
   deleteProfile: (data) => dispatch(deleteProfile(data)),
 })
 export default connect(mapStateToProps, mapDispatchToProps)(App)

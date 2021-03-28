@@ -1,5 +1,5 @@
 // Variables
-@import "variables";
+//@import "variables";
 
 //normalize
 @import "../css/normalize.css";
@@ -7,12 +7,6 @@
 //fonts
 @import "fonts";
 
-//static pages
-@import "components/static-pages.sass";
-@import "components/static/nav.sass";
-@import "components/static/main.sass";
-@import "components/static/footer.sass";
-@import "components/static/logo.sass";
 
 //buttons
 @import "components/buttons/main-button.sass";
@@ -23,8 +17,6 @@
 @import "components/forms/add-todo.sass";
 @import "components/forms/change-password.sass";
 @import "components/forms/input.sass";
-@import "components/forms/login.sass";
-@import "components/forms/register.sass";
 
 //account
 @import "components/account/account.sass";
@@ -32,7 +24,6 @@
 @import "components/account/profile.sass";
 @import "components/account/upload-photo.sass";
 @import "components/account/delete.sass";
-@import "components/account/login-register.sass";
 
 //todos
 @import "components/todos/todo-app.sass";
@@ -48,9 +39,6 @@
 
 @import "body-html.sass";
 
-//swiper slide
-@import "../css/swiper.min.css";
-@import "slider";
 
 //datepicker
 @import "~react-datepicker/dist/react-datepicker.css";

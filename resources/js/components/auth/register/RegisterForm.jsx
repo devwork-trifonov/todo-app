@@ -1,83 +1,77 @@
 import React, { useState } from "react"
+import { useDispatch } from "react-redux"
+import { Form, Input, Button } from "./RegisterForm.style"
+import { register } from "../../../actions/user"
 
-export function Register({ elementClassName, action }) {
+export function RegisterForm() {
   const [firstName, setFirstName] = useState("")
   const [lastName, setLastName] = useState("")
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
-  function submit(e) {
+  const dispatch = useDispatch()
+
+  function handleSubmit(e) {
     e.preventDefault()
     const body = new FormData(e.currentTarget)
-    action(body)
+    dispatch(register(body))
     setEmail("")
     setPassword("")
     setFirstName("")
     setLastName("")
     setName("")
   }
-
   return (
     <>
-      <form className={`register ${elementClassName}`} onSubmit={submit}>
+      <Form onSubmit={handleSubmit}>
         <h3>Подключайтесь свободно</h3>
-        <input
+        <Input
           type="text"
           name="first-name"
           required
-          className="input"
           placeholder="Имя"
           autoComplete="off"
           value={firstName}
           onChange={(e) => setFirstName(e.currentTarget.value)}
         />
-        <input
+        <Input
           type="text"
           name="last-name"
           required
-          className="input"
           placeholder="Фамилия"
           autoComplete="off"
           value={lastName}
           onChange={(e) => setLastName(e.currentTarget.value)}
         />
-        <input
+        <Input
           required
           type="email"
           name="email"
-          className="input"
           placeholder="Электронная почта"
           value={email}
           onChange={(e) => setEmail(e.currentTarget.value)}
         />
-        <input
+        <Input
           type="text"
           name="name"
           required
-          className="input"
           placeholder="Имя пользователя"
           autoComplete="off"
           value={name}
           onChange={(e) => setName(e.currentTarget.value)}
         />
-        <input
+        <Input
           required
           type="password"
           name="password"
-          className="input"
           placeholder="Пароль"
           value={password}
           onChange={(e) => setPassword(e.currentTarget.value)}
           autoComplete="on"
         />
-        <button
-          type="submit"
-          className="btn btn_purpose_account-actions register__btn"
-        >
-          Вход
-        </button>
-      </form>
+        <Button type="submit">Регистрация</Button>
+      </Form>
     </>
   )
 }
