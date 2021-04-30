@@ -5,7 +5,9 @@ export const Nav = styled.nav`
   min-height: var(--static-nav-height);
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   font-weight: 700;
-  background-color: #0060bf;
+  background-color: ${(props) =>
+    props.swiper ? "var(--swiper-bg-color)" : "#0060bf"};
+  transition: background-color ${(props) => (props.swiper ? "1s" : "0")};
   position: fixed;
   z-index: 10;
   top: 0;

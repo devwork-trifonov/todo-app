@@ -12,20 +12,20 @@ import { RegisterPage } from "../auth/register/RegisterPage"
 import { Wrapper } from "../pages/PagesWrapper"
 import { LoginPage } from "../auth/login/LoginPage"
 
+const withNavAndFooter = (Component, props) => {
+  return (
+    <Wrapper>
+      <UnAuthenticatePagesNavigation {...props} />
+      <Component />
+      <Footer />
+    </Wrapper>
+  )
+}
 export default function UnAuthenticateApp() {
-  const withNavAndFooter = (Component) => {
-    return (
-      <Wrapper>
-        <UnAuthenticatePagesNavigation />
-        <Component />
-        <Footer />
-      </Wrapper>
-    )
-  }
   return (
     <Switch>
       <Route exact path="/">
-        {withNavAndFooter(Home)}
+        <Home />
       </Route>
       <Route path="/tour">{withNavAndFooter(Tour)}</Route>
       <Route path="/new">{withNavAndFooter(New)}</Route>

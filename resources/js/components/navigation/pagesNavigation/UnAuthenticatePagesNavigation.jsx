@@ -3,9 +3,9 @@ import { PagesNavigationLink } from "./PagesNavigationLink"
 import { WhiteLogo } from "../../logo/WhiteLogo"
 import { Nav, Container, Ul } from "./UnAuthenticatePagesNavigation.style"
 
-export function UnAuthenticatePagesNavigation() {
+export function UnAuthenticatePagesNavigation(props) {
   return (
-    <Nav>
+    <Nav {...{ swiper: props.swiper }}>
       <Container>
         <WhiteLogo />
         <Ul>
