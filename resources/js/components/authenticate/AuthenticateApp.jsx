@@ -7,7 +7,7 @@ import { Upgrade } from "../pages/Upgrade"
 import { Help } from "../pages/Help"
 import Account from "../account/Account"
 import { Footer } from "../Footer/Footer"
-import { AuthenticatePagesNavigation } from "../navigation/pagesNavigation/AuthenticatePagesNavigation"
+import { AuthenticatedPagesNavigation } from "../navigation/pagesNavigation/AuthenticatedPagesNavigation"
 import Todos from "../../containers/Todos"
 import { Wrapper } from "../pages/PagesWrapper"
 
@@ -22,7 +22,7 @@ export default function AuthenticateApp({
   function withNavAndFooter(Component, props) {
     return (
       <Wrapper>
-        <AuthenticatePagesNavigation />
+        <AuthenticatedPagesNavigation />
         <Component {...props} />
         <Footer />
       </Wrapper>

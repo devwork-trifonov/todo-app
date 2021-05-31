@@ -5,10 +5,6 @@ import img1 from "../../../images/hp_steve_1.png"
 import img2 from "../../../images/hp_steve_2.png"
 import img3 from "../../../images/hp_steve_3.png"
 import img4 from "../../../images/hp_steve_4.png"
-// Import Swiper styles
-import "swiper/swiper.scss"
-import "swiper/components/navigation/navigation.scss"
-import "swiper/components/pagination/pagination.scss"
 
 import {
   Content,

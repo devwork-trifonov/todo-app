@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Remember To Progress: Список дел онлайн и управление задачами</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/navigation.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/pagination.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/swiper.css') }}" rel="stylesheet">
 </head>
 
 <body>

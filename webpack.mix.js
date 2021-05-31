@@ -1,5 +1,6 @@
-const mix = require("laravel-mix");
-const MomentLocalesPlugin = require("moment-locales-webpack-plugin");
+const mix = require("laravel-mix")
+const MomentLocalesPlugin = require("moment-locales-webpack-plugin")
+const path = require("path")
 // require("laravel-mix-bundle-analyzer");
 // if (!mix.inProduction()) {
 // 	mix.bundleAnalyzer();
@@ -16,14 +17,32 @@ const MomentLocalesPlugin = require("moment-locales-webpack-plugin");
  |
  */
 mix.webpackConfig({
-	plugins: [
-		new MomentLocalesPlugin({
-			localesToKeep: ["ru"],
-		}),
-	],
-});
+  plugins: [
+    new MomentLocalesPlugin({
+      localesToKeep: ["ru"],
+    }),
+  ],
+})
 
-// mix.copy("resources/css/swiper.min.css", "public/css/swiper.min.css");
-mix.react("resources/js/index.js", "public/js");
-mix.sass("resources/sass/app.scss", "public/css");
-// .sass("resources/sass/welcome.sass", "public/css");
+mix.react("resources/js/index.js", "public/js")
+mix.sass("resources/sass/app.scss", "public/css")
+mix.sass(
+  path.resolve(__dirname, "node_modules", "swiper/swiper.scss"),
+  "public/css"
+)
+mix.sass(
+  path.resolve(
+    __dirname,
+    "node_modules",
+    "swiper/components/pagination/pagination.scss"
+  ),
+  "public/css"
+)
+mix.sass(
+  path.resolve(
+    __dirname,
+    "node_modules",
+    "swiper/components/navigation/navigation.scss"
+  ),
+  "public/css"
+)

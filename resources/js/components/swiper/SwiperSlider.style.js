@@ -88,10 +88,17 @@ export const Tasks = styled.div`
     font-weight: 600;
     line-height: 1.2;
     &:first-child {
-      margin-right: 60px;
+      margin-right: 120px;
+      @media (max-width: 992px) {
+        margin-right: 60px;
+      }
     }
     &:last-child {
-      margin-left: 60px;
+      margin-left: 120px;
+      margin-top: 14px;
+      @media (max-width: 992px) {
+        margin-left: 60px;
+      }
     }
     &:before {
       background-image: url(${hpAvatar});

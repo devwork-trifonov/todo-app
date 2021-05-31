@@ -22,6 +22,9 @@ export const Container = styled.div`
   flex-wrap: nowrap;
   min-height: var(--static-nav-height);
   align-items: center;
+  @media (max-width: 777px) {
+    flex-wrap: wrap;
+  }
 `
 
 export const Ul = styled.ul`
@@ -32,4 +35,10 @@ export const Ul = styled.ul`
   flex-grow: 1;
   justify-content: space-around;
   font-size: var(--fs-medium);
+  @media (max-width: 777px) {
+    padding: 0;
+  }
+  @media (max-width: 750px) {
+    justify-content: flex-end;
+  }
 `

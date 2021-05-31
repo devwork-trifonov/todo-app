@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import { SwiperSlider } from "../swiper/SwiperSlider"
-import { UnAuthenticatePagesNavigation } from "../navigation/pagesNavigation/UnAuthenticatePagesNavigation"
+import { UnAuthenticatedPagesNavigation } from "../navigation/pagesNavigation/UnAuthenticatedPagesNavigation"
 import { Footer } from "../Footer/Footer"
 
 import { Main, Header, Container, Wrapper } from "./Home.style"
@@ -25,7 +25,7 @@ export function Home() {
   }
   return (
     <Wrapper swiperBgColor={swiperBgColor}>
-      <UnAuthenticatePagesNavigation swiper={true} />
+      <UnAuthenticatedPagesNavigation swiper={true} />
       <Main>
         <Header swiperBgColor={swiperBgColor}>
           <Container>

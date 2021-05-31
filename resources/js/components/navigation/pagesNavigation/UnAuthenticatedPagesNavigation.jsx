@@ -1,12 +1,11 @@
 import React from "react"
 import { PagesNavigationLink } from "./PagesNavigationLink"
 import { WhiteLogo } from "../../logo/WhiteLogo"
-import AccountDropdownContainer from "../../../containers/AccountDropdownContainer"
-import { Nav, Container, Ul } from "./AuthenticatePagesNavigation.style"
+import { Nav, Container, Ul } from "./UnAuthenticatedPagesNavigation.style"
 
-export function AuthenticatePagesNavigation() {
+export function UnAuthenticatedPagesNavigation(props) {
   return (
-    <Nav>
+    <Nav {...{ swiper: props.swiper }}>
       <Container>
         <WhiteLogo />
         <Ul>
@@ -14,11 +13,11 @@ export function AuthenticatePagesNavigation() {
           <PagesNavigationLink href="/new">Что нового?</PagesNavigationLink>
           <PagesNavigationLink href="/upgrade">Обновить</PagesNavigationLink>
           <PagesNavigationLink href="/help">Помощь</PagesNavigationLink>
-          <PagesNavigationLink href="/app">
-            Запустить приложение
+          <PagesNavigationLink href="/login">Вход</PagesNavigationLink>
+          <PagesNavigationLink withBorder href="/register">
+            Подписаться бесплатно
           </PagesNavigationLink>
         </Ul>
-        <AccountDropdownContainer />
       </Container>
     </Nav>
   )

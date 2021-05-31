@@ -7,7 +7,7 @@ import { New } from "../pages/New"
 import { Upgrade } from "../pages/Upgrade"
 import { Help } from "../pages/Help"
 import { Footer } from "../Footer/Footer"
-import { UnAuthenticatePagesNavigation } from "../navigation/pagesNavigation/UnAuthenticatePagesNavigation"
+import { UnAuthenticatedPagesNavigation } from "../navigation/pagesNavigation/UnAuthenticatedPagesNavigation"
 import { RegisterPage } from "../auth/register/RegisterPage"
 import { Wrapper } from "../pages/PagesWrapper"
 import { LoginPage } from "../auth/login/LoginPage"
@@ -15,7 +15,7 @@ import { LoginPage } from "../auth/login/LoginPage"
 const withNavAndFooter = (Component, props) => {
   return (
     <Wrapper>
-      <UnAuthenticatePagesNavigation {...props} />
+      <UnAuthenticatedPagesNavigation {...props} />
       <Component />
       <Footer />
     </Wrapper>
