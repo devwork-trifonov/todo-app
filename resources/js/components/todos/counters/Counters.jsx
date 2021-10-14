@@ -11,26 +11,24 @@ import {
   CompletedCaption,
 } from "./Counters.style"
 
-export function Counters({
-  todoListName,
-  todoList,
-  expiredTodos,
-  completedTodos,
-}) {
+export function Counters({ todoListName, todoList }) {
+  const all = todoList.filter((todo) => !todo.completed)
+  const expired = todoList.filter((todo) => todo.expired)
+  const completed = todoList.filter((todo) => todo.completed)
   return (
     <StyledCounters>
       <ListName>{todoListName}</ListName>
       <Wrapper>
         <CounterContainer>
-          <AllTodos>{todoList.length}</AllTodos>
+          <AllTodos>{all.length}</AllTodos>
           <CounterCaption>задач(и)</CounterCaption>
         </CounterContainer>
         <CounterContainer>
-          <ExpiredTodos>{expiredTodos.length}</ExpiredTodos>
+          <ExpiredTodos>{expired.length}</ExpiredTodos>
           <CounterCaption>просрочено</CounterCaption>
         </CounterContainer>
         <CounterContainer>
-          <CompletedTodos>{completedTodos.length}</CompletedTodos>
+          <CompletedTodos>{completed.length}</CompletedTodos>
           <CompletedCaption>завершено</CompletedCaption>
         </CounterContainer>
       </Wrapper>

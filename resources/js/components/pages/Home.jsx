@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import { SwiperSlider } from "../swiper/SwiperSlider"
-import { UnAuthenticatedPagesNavigation } from "../navigation/pagesNavigation/UnAuthenticatedPagesNavigation"
+import { UnAuthenticatedPagesNavigation } from "../pagesNavigation/unAuthenticated/UnAuthenticatedPagesNavigation"
 import { Footer } from "../Footer/Footer"
 
 import { Main, Header, Container, Wrapper } from "./Home.style"

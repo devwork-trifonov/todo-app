@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react"
-import { MISSING_FOCUS_ELEMENTS } from "../notes/NotesContainer"
+import { MISSING_FOCUS_ELEMENTS } from "../Notes"
 import {
   StyledNote,
   UserPhoto,
@@ -48,7 +48,6 @@ export function Note({
 
   function changeNoteRequest() {
     setNoteBody({ id: note.id, body: inputText })
-    setIsFocused(MISSING_FOCUS_ELEMENTS)
   }
 
   function deleteNoteRequest() {

@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const TodoDetails = styled.div`
+export const StyledTodoDetails = styled.div`
   position: absolute;
   top: var(--p-lg);
   left: 100%;

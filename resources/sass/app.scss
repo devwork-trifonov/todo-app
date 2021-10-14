@@ -1,5 +1,3 @@
-// Variables
-//@import "variables";
 
 //normalize
 @import "../css/normalize.css";
@@ -10,24 +8,15 @@
 
 //buttons
 @import "components/buttons/main-button.sass";
-@import "components/buttons/nav-burger.sass";
 
 //forms
-@import "components/forms/add-todo.sass";
 @import "components/forms/input.sass";
 
 
 //todos
 @import "components/todos/todo-app.sass";
-@import "components/todos/navigation-by-category.sass";
 @import "components/todos/todo-list.sass";
-@import "components/todos/todo.sass";
 @import "components/todos/completed-incomplete-links.sass";
-@import "components/todos/toolbar.sass";
-@import "components/forms/datepicker.sass";
-@import "components/todos/additional-info.sass";
-@import "components/todos/task-details.sass";
-@import "components/todos/top-bar.sass";
 
 @import "body-html.sass";
 

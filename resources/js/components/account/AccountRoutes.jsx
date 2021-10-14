@@ -2,7 +2,7 @@ import React from "react"
 import { Route } from "react-router-dom"
 
 import { Profile } from "./profile/Profile"
-import ChangePassword from "./Account.ChangePassword"
+import { ChangePassword } from "./changePassword/ChangePassword"
 import { DeleteProfile } from "./delete/DeleteProfile"
 import { UploadPhoto } from "./uploadPhoto/UploadPhoto"
 

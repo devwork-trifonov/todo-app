@@ -31,7 +31,7 @@ class TodoController extends Controller
         $todo->user_id = $user->id;
         $todo->save();
 
-        return $user->todos->last();
+        return $user->todos;
     }
 
     public function setBody(Request $request)

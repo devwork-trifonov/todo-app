@@ -1,23 +1,29 @@
 import React from "react"
-import { connect } from "react-redux"
+import { TodoEdit } from "../todoEdit/TodoEdit"
+import { Notes } from "../../notes/Notes"
+import { StyledTodoDetails } from "./TodoDetails.style"
 import { setBody } from "../../../actions/todos"
-import { TodoDetailsContainer } from "./TodoDetailsContainer"
+import { useDispatch, useSelector } from "react-redux"
 
-function TodoDetails(props) {
-  return <TodoDetailsContainer {...props} />
+export function TodoDetails({
+  isOpened,
+  todoListName,
+  hideDetails,
+  resetTodoDetails,
+}) {
+  const dispatch = useDispatch()
+  const chosenTodo = useSelector((state) => state.todos.selectedTodo.data)
+
+  return (
+    <StyledTodoDetails isOpened={isOpened}>
+      <TodoEdit
+        todo={chosenTodo}
+        setBody={(props) => dispatch(setBody(props))}
+        resetTodoDetails={resetTodoDetails}
+        todoListName={todoListName}
+        hideDetails={hideDetails}
+      />
+      <Notes />
+    </StyledTodoDetails>
+  )
 }
-
-function mapStateToProps(state) {
-  const { todosData } = state.todos
-  return {
-    todosData,
-  }
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    setBody: (todoData) => dispatch(setBody(todoData)),
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(TodoDetails)

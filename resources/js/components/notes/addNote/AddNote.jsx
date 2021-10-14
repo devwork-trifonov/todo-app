@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react"
-import { ADD_NOTE_FORM, MISSING_FOCUS_ELEMENTS } from "../notes/NotesContainer"
+import { ADD_NOTE_FORM, MISSING_FOCUS_ELEMENTS } from "../Notes"
 import {
   StyledAddNote,
   InputWrapper,
@@ -14,20 +14,10 @@ import {
 const DEFAULT_INPUT_HEIGHT = 32
 const INPUT_HEIGHT_AFTER_FOCUS = 49
 
-export function AddNote({
-  avatar,
-  addNoteRequest,
-  successReceiveNote,
-  isFocused,
-  setIsFocused,
-}) {
+export function AddNote({ avatar, addNoteRequest, isFocused, setIsFocused }) {
   const [inputHeight, setInputHeight] = useState(DEFAULT_INPUT_HEIGHT)
   const [inputText, setInputText] = useState("")
   const addNoteInput = useRef()
-
-  useEffect(() => {
-    if (successReceiveNote) addNoteInputBluring()
-  }, [successReceiveNote])
 
   useEffect(() => {
     if (!isFocused) {
@@ -75,17 +65,12 @@ export function AddNote({
       </InputWrapper>
       <ButtonsWrapper isFocused={isFocused}>
         <SaveButton
-          disabled={!inputText && successReceiveNote}
+          disabled={!inputText}
           onClick={() => addNoteRequest(inputText)}
         >
           Сохранить
         </SaveButton>
-        <CancelButton
-          disabled={!successReceiveNote}
-          onClick={addNoteInputBluring}
-        >
-          Отмена
-        </CancelButton>
+        <CancelButton onClick={addNoteInputBluring}>Отмена</CancelButton>
       </ButtonsWrapper>
     </StyledAddNote>
   )

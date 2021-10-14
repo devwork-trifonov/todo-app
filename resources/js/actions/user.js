@@ -30,11 +30,12 @@ export function setPassword(data) {
 
 export function logIn(body) {
   return (dispatch) => {
-    return axios.post("/login", body, {}).then(() => {
-      dispatch(fetchUser())
-      dispatch(fetchNotes())
-      dispatch(fetchTodos())
-    })
+    return axios
+      .post("/login", body, {})
+      .then(() => {
+        dispatch(fetchUser())
+      })
+      .catch((e) => "")
   }
 }
 
@@ -42,8 +43,6 @@ export function register(body) {
   return (dispatch) => {
     return axios.post("/register", body, {}).then(() => {
       dispatch(fetchUser())
-      dispatch(fetchNotes())
-      dispatch(fetchTodos())
     })
   }
 }
@@ -82,6 +81,8 @@ export default function fetchUser() {
       .then((res) => {
         if (typeof res === "object") {
           dispatch(receiveUser(res))
+          dispatch(fetchTodos())
+          // dispatch(fetchNotes())
         } else {
           dispatch(errorUser())
         }

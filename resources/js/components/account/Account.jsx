@@ -44,7 +44,7 @@ export default function Account(props) {
     }
   })
 
-  function Links({ links }) {
+  function Links({ links, pathname }) {
     return links.map((link) => {
       return (
         <li key={link.key}>
@@ -77,7 +77,7 @@ export default function Account(props) {
         <ContentWrapper>
           <AccountNav>
             <ul>
-              <Links links={links} />
+              <Links links={links} pathname={pathname} />
             </ul>
           </AccountNav>
           <Content>

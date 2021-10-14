@@ -7,8 +7,8 @@ import { Upgrade } from "../pages/Upgrade"
 import { Help } from "../pages/Help"
 import Account from "../account/Account"
 import { Footer } from "../Footer/Footer"
-import { AuthenticatedPagesNavigation } from "../navigation/pagesNavigation/AuthenticatedPagesNavigation"
-import Todos from "../../containers/Todos"
+import { AuthenticatedPagesNavigation } from "../pagesNavigation/authenticated/AuthenticatedPagesNavigation"
+import { TodoApp } from "../todos/TodoApp"
 import { Wrapper } from "../pages/PagesWrapper"
 
 export default function AuthenticateApp({
@@ -32,7 +32,7 @@ export default function AuthenticateApp({
   return (
     <Switch>
       <Route path="/app/:list">
-        <Todos />
+        <TodoApp />
       </Route>
       <Route path="/tour">{withNavAndFooter(Tour)}</Route>
       <Route path="/new">{withNavAndFooter(New)}</Route>

@@ -21,6 +21,9 @@ export const CloseDetailsButton = styled.button`
 `
 export const CloseDetailsWithoutInactivateTodo = styled(CloseDetailsButton)`
   visibility: hidden;
+  @media (max-width: 767px) {
+    visibility: visible;
+  }
 `
 export const TodoDetails = styled.div`
   padding: var(--p-lg);

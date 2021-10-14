@@ -40,7 +40,7 @@ function reducer(state, action) {
 
 export function TodoEdit({
   todo,
-  unselectingTodo,
+  resetTodoDetails,
   todoListName,
   hideDetails,
   setBody,
@@ -108,7 +108,7 @@ export function TodoEdit({
   }
   function closeTodoDetails() {
     resetTodo()
-    unselectingTodo()
+    resetTodoDetails()
     document.removeEventListener("click", handleClickOutsideInput)
   }
   function resetTodo() {

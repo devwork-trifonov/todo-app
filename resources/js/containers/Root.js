@@ -9,11 +9,11 @@ import fetchUser from "../actions/user"
 import { fetchNotes } from "../actions/notes"
 
 const store = configureStore()
-document.addEventListener("DOMContentLoaded", () => {
-  store.dispatch(fetchUser())
-  store.dispatch(fetchTodos())
-  store.dispatch(fetchNotes())
-})
+// document.addEventListener("DOMContentLoaded", () => {
+store.dispatch(fetchUser())
+// store.dispatch(fetchTodos())
+// store.dispatch(fetchNotes())
+// })
 
 export default function Root() {
   return (

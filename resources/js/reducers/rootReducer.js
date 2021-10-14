@@ -1,7 +1,7 @@
-import { combineReducers } from "redux";
-import { user } from "./user";
-import { notes } from "./notes";
-import { todos } from "./todos";
+import { combineReducers } from "redux"
+import { user } from "./user"
+import { todos } from "./todos"
+import newTodo from "../components/todos/newTodo/newTodoSlice"
 
-const rootReducer = combineReducers({ user: user, todos: todos, notes: notes });
-export default rootReducer;
+const rootReducer = combineReducers({ user, todos, newTodo })
+export default rootReducer

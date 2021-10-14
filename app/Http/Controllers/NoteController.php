@@ -28,7 +28,7 @@ class NoteController extends Controller
         $note->body = $request->note['body'];
         $note->todo_id = $request->note['todo_id'];
         $note->save();
-        return $user->notes->last();
+        return $user->notes;
     }
 
     public function setBody(Request $request)

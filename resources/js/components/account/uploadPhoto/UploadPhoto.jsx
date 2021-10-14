@@ -72,7 +72,7 @@ export function UploadPhoto({ updatePhoto }) {
     document.addEventListener("scroll", changeCanvasZeroCoordinates)
     return () =>
       document.removeEventListener("scroll", changeCanvasZeroCoordinates)
-  }, [changeCanvasZeroCoordinates])
+  }, [])
 
   useEffect(() => {
     document.addEventListener("mousemove", mouseMove)
