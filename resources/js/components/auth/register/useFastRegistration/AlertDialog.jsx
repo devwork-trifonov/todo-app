@@ -22,8 +22,8 @@ export function AlertDialog({ handleConfirmFastRegistration, closeAlert }) {
     return () => document.removeEventListener("click", handleClickOutsideAlert)
   }, [closeAlert])
   return (
-    <StyledAlert ref={alert}>
-      <Dialog>
+    <StyledAlert>
+      <Dialog ref={alert}>
         <Header>Использовать быструю регистрацию?</Header>
         <Description>
           Быстрая регистрация избавит вас от необходимости заполнения формы
