@@ -15,9 +15,6 @@ class SecuredHttp
      */
     public function handle($request, Closure $next)
     {
-        if (!$request->secure()) {
-          return redirect()->secure($request->path());
-      }
-        return $next($request);
+        
     }
 }
