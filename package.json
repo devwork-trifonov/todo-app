@@ -10,7 +10,8 @@
         "prod": "npm run production",
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "lint": "eslint ./resources/js",
-        "start": "npm run production"
+        "start": "npm run production",
+        "build":"npm run production"
     },
     "engines": { "node" : "^12.13.1","npm":"^6.14.11" },
       "dependencies": {
