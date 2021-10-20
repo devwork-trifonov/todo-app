@@ -1,11 +1,7 @@
 const mix = require("laravel-mix")
 const MomentLocalesPlugin = require("moment-locales-webpack-plugin")
 const path = require("path")
-// require("laravel-mix-bundle-analyzer");
-// if (!mix.inProduction()) {
-// 	mix.bundleAnalyzer();
-// }
-
+const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin")
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -21,6 +17,7 @@ mix.webpackConfig({
     new MomentLocalesPlugin({
       localesToKeep: ["ru"],
     }),
+    new CaseSensitivePathsPlugin(),
   ],
 })
 
