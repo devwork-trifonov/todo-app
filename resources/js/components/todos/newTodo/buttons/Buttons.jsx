@@ -1,5 +1,5 @@
 import React from "react"
-import { StyledButtons } from "./buttons.style"
+import { StyledButtons } from "./Buttons.style"
 import { Options } from "./options/Options"
 import { AddTodoBtn } from "./addTodoBtn/AddTodoBtn"
 import { useSelector } from "react-redux"
