@@ -1,7 +1,8 @@
 import React from "react"
-import { StyledButtons } from "./buttons.style.js"
+// import { StyledButtons } from "./buttons.style.js"
+import { StyledButtons } from "./style.js"
 import { Options } from "./options/Options"
-// import { AddTodoBtn } from "./addTodoBtn/AddTodoBtn"
+import { AddTodoBtn } from "./addTodoBtn/AddTodoBtn"
 import { useSelector } from "react-redux"
 
 export function Buttons({
@@ -26,7 +27,8 @@ export function Buttons({
         handleSelectStartDate={handleSelectStartDate}
         handleSelectDueDate={handleSelectDueDate}
       />
-      {/* <AddTodoBtn isInputHasText={isInputHasText} fetchStatus={fetchStatus} /> */}
+      <AddTodoBtn isInputHasText={isInputHasText} fetchStatus={fetchStatus} />
+      //{" "}
     </StyledButtons>
   )
 }
