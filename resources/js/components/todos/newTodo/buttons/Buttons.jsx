@@ -27,7 +27,6 @@ export function Buttons({
         handleSelectDueDate={handleSelectDueDate}
       />
       <AddTodoBtn isInputHasText={isInputHasText} fetchStatus={fetchStatus} />
-      //{" "}
     </StyledButtons>
   )
 }
